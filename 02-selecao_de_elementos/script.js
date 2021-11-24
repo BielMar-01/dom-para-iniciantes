@@ -45,6 +45,66 @@ const titulos = document.querySelectorAll('.titulo');
 const fotosAnimais = document.querySelectorAll('.animais-lista img');
 
 // Retorna o segundo elemento
-console.log(gridSection[1]);
+// console.log(gridSection[1]);
 
 // Diferente do getElementsByClassName, a lista aqui é estática
+
+
+// HTMLCOLLECTION VS NODELIST
+// A diferença está nos métodos e propriedades de ambas. Além disso a NodeList retornada com querySelectorAll é estática.
+
+const titulo = document.querySelector('.titulo');
+const gridSectionHTML = document.getElementsByClassName('grid-section');
+const gridSectionNode = document.querySelectorAll('.grid-section');
+
+titulo.classList.add('grid-section');
+
+// console.log(gridSectionHTML); // 4 itens
+// console.log(gridSectionNode); // 3 itens
+
+
+// ARRAY-LIKE
+// HTMLCollection e NodeList são array-like, parecem uma array mas não são. O método de Array forEach() por exemplo, existe apenas em NodeList.
+
+const gridSection1 = document.querySelectorAll('.grid-section');
+
+gridSection1.forEach(function(gridItem, index, array) {
+  gridItem.classList.add('azul');
+  // console.log(index) // index do item na array
+  // console.log(array) // a array completa
+});
+
+// É possível transformar array-like em uma Array real, utilizando o método Array.from(gridSection)
+
+
+// EXERCÍCIO
+
+// Retorne no console todas as imagens do site
+const todasImg = document.querySelectorAll('img');
+console.log(todasImg);
+
+// Retorne no console apenas as imagens que começaram com a palavra imagem
+const todasImgAnimais = document.querySelectorAll('img[src^="img/imagem"]');
+console.log(todasImgAnimais);
+
+// Selecione todos os links internos (onde o href começa com #)
+const linksInterno = document.querySelectorAll('[href^="#"]');
+console.log(linksInterno);
+
+// Selecione o primeiro h2 dentro de .animais-descricao
+
+// const animais = document.querySelector('.animais-descricao h2'); 1º Jeito a se fazer
+const animaish2 = document.querySelector('.animais-descricao');
+const h2Animais = animaish2.querySelector('h2');
+
+console.log(animais);
+console.log(h2Animais);
+
+// Selecione o último p do site
+const paragrafos = document.querySelectorAll('p');
+console.log(paragrafos);
+console.log(paragrafos[--paragrafos.length]);
+// console.log(paragrafos[paragrafos.length - 1]);
+
+
+
