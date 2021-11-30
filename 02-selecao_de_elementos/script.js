@@ -105,6 +105,3 @@ const paragrafos = document.querySelectorAll('p');
 console.log(paragrafos);
 console.log(paragrafos[--paragrafos.length]);
 // console.log(paragrafos[paragrafos.length - 1]);
-
-
-
