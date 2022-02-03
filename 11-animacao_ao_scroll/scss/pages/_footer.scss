@@ -1,0 +1,14 @@
+.copy {
+  grid-column: 3 / 5;
+  margin-bottom: 2rem;
+  background: $bg-footer;
+  p {
+    padding: 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+  }
+  @media (max-width: 700px) {
+    grid-column: 1;
+    margin-bottom: 0px;
+  }
+}
