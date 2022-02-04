@@ -66,3 +66,32 @@ function Carro(marcaAtribuida, precoAtribuido) {
 
 const honda = new Carro('Honda', 4000);
 const fiat = new Carro('Fiat', 3000);
+
+
+// THIS KEYWORD
+// O this faz referência ao próprio objeto construído com a Constructor Function.
+function Carro(marca, precoInicial) {
+  const taxa = 1.2;
+  const precoFinal = precoInicial * taxa;
+  this.marca = marca;
+  this.preco = precoFinal;
+  console.log(this);
+}
+
+const honda = new Carro('Honda', 2000);
+// Variáveis dentro da Constructor estão "protegidas".
+
+
+// LEMBRE-SE DE USAR PARÂMETROS
+function Dom(seletor) {
+  const element = document.querySelector(seletor);
+  this.ativo = function(classe) {
+    element.classList.add(classe);
+  };
+}
+
+const lista = new Dom('ul');
+lista.ativo('ativo');
+
+const lastLi = new Dom('li:last-child');
+lastLi.ativo('ativo');
